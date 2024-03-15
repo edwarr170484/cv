@@ -1,0 +1,211 @@
+:root {
+    --color-white: #F3F3ED;
+    --color-gray: #92969C;
+    --color-orange:#AB8B5C;
+    --color-braun:#846843;
+    --color-blue:#1B1E49;
+    --color-black: #1F2328;
+    --effect-time: 0.3s;
+    --btn-border-radius: 10px;
+    --gutter-x: 15px;
+    --gutter-y: 15px;
+  }
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-white);
+    font-family: "Open Sans", sans-serif;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.cv-grid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "aside header"
+                         "aside main";
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.cv-header{
+    grid-area: header;
+    position:fixed;
+    top:0;
+    left: 0;
+    padding-left: 260px;
+    width: 100%;
+}
+.cv-header__title{
+    font-family: "Ubuntu", sans-serif;
+}
+.cv-header__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px var(--gutter-x);
+}
+
+.cv-header__info h1, .cv-header__info h3{
+    margin: 0;
+    padding: 0;
+}
+
+.cv-header__info h1{
+    margin-bottom: 7px;
+}
+
+.cv-header__links ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.cv-header__links ul a{
+    color: var(--color-black);
+    font-size:35px;
+}
+.cv-header__links ul a .fa-linkedin{
+    color: #0A66C2;
+}
+.cv-header__links ul a .fa-telegram
+{
+    color: #34a8da;
+}
+.cv-aside{
+    grid-area: aside;
+    background: var(--color-blue);
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    max-width: 260px;
+    height: 100%;
+    overflow-y: scroll;
+    box-shadow: 3px 0px 4px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 0px 4px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 0px 4px -1px rgba(0,0,0,0.75);
+}
+.cv-aside::-webkit-scrollbar {
+    display: none;
+}
+.cv-avatar{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+.cv-avatar img{
+    width: 100%;
+    max-width: 100px;
+    border-radius: 50%;
+}
+.cv-aside__profile{
+    color: var(--color-white);
+}
+
+.cv-aside__title{
+    padding-left: var(--gutter-x);
+    padding-right: var(--gutter-x);
+    font-size: 18px;
+    line-height: 38px;
+    letter-spacing: 2px;
+    text-align: right;
+    font-weight: 600;
+    background: var(--color-braun);
+    text-transform: uppercase;
+}
+.cv-aside__info{
+    padding: var(--gutter-y) var(--gutter-x);
+}
+.cv-aside__info ul li, .cv-aside__info ul li a{
+    color: var(--color-white);
+    line-height: 23px;
+    text-align: right;
+    font-weight: 300;
+}
+.cv-aside__contacts li a{
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.cv-aside__skills{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.cv-aside__skills li a{
+    display: block;
+    border-radius: 3px;
+    background: var(--color-orange);
+    color: var(--color-blue) !important;
+    padding: 2px 7px 1px;
+    font-size: 14px;
+    font-weight: 500 !important;
+}
+.cv-main{
+    grid-area: main;
+    padding-top: 86px;
+    display: flex;
+    flex-direction: column;
+}
+.cv-main__menu ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.cv-main__menu ul li{
+    flex-grow: 1;
+}
+.cv-main__menu ul li a{
+    display: block;
+    padding: 7px 10px;
+    text-align: center;
+    color: var(--color-black);
+    font-weight: 600;
+    background: var(--color-gray);
+    transition: all 0.2s ease-in-out;
+}
+.cv-main__menu ul li a:hover{
+    background: #747679;
+}
+.cv-main__menu ul li a.active{
+    background: #747679;
+}
+.cv-main__tabs{
+    flex-grow: 1;
+    overflow-y: auto;
+    position: relative;
+}
+.tabs{
+    position: relative;
+}
+.tabs .tab{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.tabs .tab.active{
+    opacity: 1;
+}
