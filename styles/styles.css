@@ -82,7 +82,7 @@ a{
 .cv-header__links ul a .fa-linkedin{
     color: #0A66C2;
 }
-.cv-header__links ul a .fa-telegram
+.cv-header__links ul a .fa-at
 {
     color: #34a8da;
 }
@@ -107,7 +107,13 @@ a{
     display: flex;
     justify-content: center;
     padding-top: 15px;
-    padding-bottom: 25px;
+    padding-bottom: 7px;
+}
+.cv-aside__slogan{
+    color: var(--color-white);
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 .cv-avatar img{
     width: 100%;
