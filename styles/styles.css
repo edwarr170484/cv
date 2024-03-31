@@ -7,6 +7,7 @@
     --color-black: #1F2328;
     --effect-time: 0.3s;
     --btn-border-radius: 10px;
+    --border-radius: 3px;
     --gutter-x: 15px;
     --gutter-y: 15px;
   }
@@ -159,7 +160,7 @@ a{
 }
 .cv-aside__skills li a{
     display: block;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     background: var(--color-orange);
     color: var(--color-blue) !important;
     padding: 2px 7px 1px;
@@ -208,18 +209,21 @@ a{
     left: 0;
     top: 0;
     width: 100%;
+    height: 100%;
     padding: 15px;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+    z-index:1;
 }
 .tabs .tab.active{
     opacity: 1;
+    z-index: 3;
 }
 
 .cv-portfolio{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:30px;
+    gap:15px;
 }
 .cv-portfolio__item{
     display: block;
@@ -233,4 +237,47 @@ a{
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
+}
+.cv-experience{
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--color-gray);
+}
+.cv-experience h4, .cv-experience h5{
+    margin: 0;
+    padding: 0;
+}
+.cv-experience > i{
+    font-size: 14px;
+}
+.cv-experience__skills{
+    display: flex;
+    gap: 7px;
+    padding-top:10px;
+    padding-bottom:15px;
+}
+.cv-experience__skills li{
+    display: block;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-blue);
+    color: var(--color-blue);
+    padding: 2px 7px 1px;
+    font-size: 14px;
+    font-weight: 500 !important;
+}
+.cv-experience__work{
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.cv-experience__work li{
+    display: flex;
+    align-items: baseline;
+    gap:10px;
+}
+.cv-experience__work li i{
+    font-size: 13px;
+    color: var(--color-blue);
+    font-weight: bold;
 }
