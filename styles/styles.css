@@ -247,6 +247,9 @@ a{
     margin: 0;
     padding: 0;
 }
+.cv-experience a{
+    color: #0a66c2;
+}
 .cv-experience > i{
     font-size: 14px;
 }
@@ -255,6 +258,7 @@ a{
     gap: 7px;
     padding-top:10px;
     padding-bottom:15px;
+    flex-wrap: wrap;
 }
 .cv-experience__skills li{
     display: block;
